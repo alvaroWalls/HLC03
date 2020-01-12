@@ -1,0 +1,198 @@
+/*
+------------------------------------------------------------------------------------------------------------
+ESTILOS GENERALES
+------------------------------------------------------------------------------------------------------------
+*/
+html
+{
+	width:auto;
+	background: -webkit-linear-gradient(0.25turn, #3227a6, #eb58e1, #d69d3c);
+	background: -moz-linear-gradient(0.25turn, #3227a6, #eb58e1, #d69d3c);
+	background: linear-gradient(0.25turn, #3227a6, #eb58e1, #d69d3c);
+
+}
+
+body
+{
+	width: 85%;
+	padding: 80px;
+    background: linear-gradient(0.25turn, #3227a6, #eb58e1, #d69d3c);
+    margin-right: 30px;
+    margin-left: 20px;
+    font-family: 'Alatsi', sans-serif;
+    font-size: 1.125em;
+
+}
+
+#Cabecera h1
+{
+	text-align: center;
+	color: white;
+	text-shadow: 5px -1px 3px rgba(9, 150, 150, 0.72);
+}
+
+/*
+------------------------------------------------------------------------------------------------------------
+MENU ADAPTABLE A DISPOSITIVOS
+------------------------------------------------------------------------------------------------------------
+*/
+@media screen and (min-width: 800px)
+{
+	#mySidenav
+	{
+		display: none;
+	}
+
+	#botonMenuLateral
+	{
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+
+	#Menu{
+		display: none;
+	}
+
+	#mySidenav
+	{
+		display: block;
+	}
+
+	#mySidenav li
+	{
+		list-style: none;
+	}
+
+	#botonMenuLateral
+	{
+		display: block;
+	}	
+
+
+	.sidenav 
+	{
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #111;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
+
+		
+	.sidenav a 
+	{
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+	}
+	
+	.sidenav a:hover 
+	{
+		color: #f1f1f1;
+		background-color: #F6B773
+	}
+	
+	.sidenav .closebtn 
+	{
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	}
+
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+
+  }
+
+
+
+#Menu
+{
+	margin: auto;
+	width: 500px;
+	font-size: 18px;
+}
+
+#Menu ul
+{
+	list-style: none;
+}
+
+#Menu #Principal li a
+{	
+	text-decoration: none;
+	color: black;
+	padding: 10px 20px;
+	display:block; /*Esto se hace para que no se solapen el padding unos con otros*/
+	transition: all 0.3s linear;
+
+
+}
+
+#Menu ul li a:hover
+{
+	background-color: #F6B773
+}
+
+#Menu #Principal > li /*Esto se hace para los li que estan directos de #Principal que se coloquen a la izquierda*/
+{	
+	float:left;
+	clear:right;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------
+ARTICLE Y SECTION
+------------------------------------------------------------------------------------------------------------
+*/
+
+article
+{
+	margin: 70px;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    background: linear-gradient(0.25turn, #f69d3c, #ebf8e1, #3f87a6);
+	-webkit-box-shadow: 46px -37px 22px -5px rgba(0,0,0,0.33);
+	-moz-box-shadow: 46px -37px 22px -5px rgba(0,0,0,0.33);
+	box-shadow: 46px -37px 22px -5px rgba(0,0,0,0.33);
+	font-size: 1em;
+
+}
+
+section
+{
+	padding-top: 130px;
+}
+
+section article
+{
+	position:relative;
+	display:block;
+}
+
+article details p a
+{
+	text-decoration: none;
+	color: white;
+}
+
+footer a
+{
+	text-decoration:none;
+	color:black;
+}
+	
