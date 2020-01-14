@@ -14,7 +14,7 @@ html
 
 body
 {
-	width: 85%;
+	width: auto;
 	padding: 80px;
     background: linear-gradient(0.25turn, #3227a6, #eb58e1, #d69d3c);
     margin-right: 30px;
@@ -29,6 +29,19 @@ body
 	text-align: center;
 	color: white;
 	text-shadow: 5px -1px 3px rgba(9, 150, 150, 0.72);
+}
+
+#datos
+{	
+	margin-left: 210px;
+	margin-top: 100px;
+	width: 400px;
+	
+}
+
+#boton
+{
+	margin-left: 34em;
 }
 
 /*
@@ -159,36 +172,51 @@ ARTICLE Y SECTION
 ------------------------------------------------------------------------------------------------------------
 */
 
+#resul
+{
+	width:30em;
+}
+
 article
 {
+	width: 20em;
 	margin: 70px;
     border: none;
     padding: 10px;
     border-radius: 25px;
-    background: linear-gradient(0.25turn, #f69d3c, #ebf8e1, #3f87a6);
-	-webkit-box-shadow: 46px -37px 22px -5px rgba(0,0,0,0.33);
-	-moz-box-shadow: 46px -37px 22px -5px rgba(0,0,0,0.33);
-	box-shadow: 46px -37px 22px -5px rgba(0,0,0,0.33);
+    background: linear-gradient(0.25turn, #f60e6c, #aba6e7, #3d07f6);
+	-webkit-box-shadow: 36px -37px 32px -5px rgba(0,0,0,0.23);
+	-moz-box-shadow: 36px -37px 32px -5px rgba(0,0,0,0.23);
+	box-shadow: 36px -37px 32px -5px rgba(0,0,0,0.23);
 	font-size: 1em;
 
 }
 
+article table
+{
+	margin-left: 31px;
+}
+
+article table th, td
+{
+	padding-right: 20px;
+}
+
+
 section
 {
-	padding-top: 130px;
+	text-align:center;
+	padding-left: 310px;
+	padding-top: 60px;
 }
 
 section article
 {
+
 	position:relative;
 	display:block;
 }
 
-article details p a
-{
-	text-decoration: none;
-	color: white;
-}
 
 footer a
 {
