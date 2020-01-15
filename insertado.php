@@ -4,7 +4,7 @@
 		$ganadas = 0;
 		$perdidas = 0;
 		
-		if ($_POST['mail'] != "" && $_POST['nombre'] != "" && $_POST['apellidos'] != "") 
+		if (($_POST['mail'] != "" && $_POST['nombre'] != "" )&&($_POST['apellido'] != "" && $_POST['fecha_nac'] != "")) 
 		{
    			$mail = $_POST['mail'];
 			$jugadores = "SELECT COUNT(*) AS CONT from Jugador WHERE email = '$mail'";
@@ -15,22 +15,18 @@
 			{
 				$query = "INSERT INTO Jugador (nombre, apellido, fechanac, email, ganadas,perdidas) VALUES (?,?,?,?,?,?)";
 				$stmt = mysqli_prepare($conexion, $query) or die (mysqli_error($conexion));
-				$stmt -> bind_param('ssssii', $_POST['nombre'],$_POST['apellido'],$_POST['fecha_nac'],$_POST['mail'],$ganadas,$perdidas);
+				$stmt -> bind_param('ssssii', $_POST['nombre'],$_POST['apellido'],$_POST['fecha_nac'],$mail,$ganadas,$perdidas);
 				$stmt -> execute();
 				$stmt -> close();
-				
+				header('location: index.php?error=3');	
 			}
 			else
 			{
 				header('location: alta.php?error=2');
 			}
-	
-			
-			
-			
-		}else
+		}
+		else
 		{
-			
 			header('location: alta.php?error=1');
 		}
-	?>
+?>
