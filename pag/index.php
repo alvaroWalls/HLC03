@@ -52,12 +52,13 @@
 			
 			function closeNav() {
 			  document.getElementById("mySidenav").style.width = "0";
+			
 			}
 		</script>	
 
 
 		<section>
-
+			
 			<article>
 				<header>
 					<p>-Lista de jugadores disponibles-</p>
@@ -75,9 +76,10 @@
 						while($datos = mysqli_fetch_array($result)){
 							$fecha = time() - strtotime($datos['fechanac']);
 							$edad = floor($fecha / 31556926);
+							$mail = $datos['email'];
 					?>
 					<tr>
-						<td><?php echo $datos['nombre'] ?></td>
+						<td><?php echo "<a id='enlace_jugar' href=juego.php?nombre=".$mail ."</a>" .$datos['nombre']?></td>
 						<td><?php echo $datos['apellido'] ?></td>
 						<td><?php echo $edad ?></td>
 					</tr>
