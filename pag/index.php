@@ -1,5 +1,5 @@
 <?php
-	$conexion = mysqli_connect('172.18.0.1','usuario','1234','db');
+	$conexion = mysqli_connect('172.19.0.1','usuario','1234','db');
 	
 	if($_GET['error']==3)
 	{
