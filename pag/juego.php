@@ -122,6 +122,23 @@
 						?>
 					
 				</p>
+				<?php
+						if($_SESSION["fallos"]==0)
+							echo "<img src=\"imgs/0.jpg\"</img>";
+						elseif($_SESSION["fallos"]==1)
+							echo "<img src=\"imgs/1.jpg\"</img>";
+						elseif($_SESSION["fallos"]==2)
+							echo "<img src=\"imgs/2.jpg\"</img>";
+						elseif($_SESSION["fallos"]==3)
+							echo "<img src=\"imgs/3.jpg\"</img>";
+						elseif($_SESSION["fallos"]==4)
+							echo "<img src=\"imgs/4.jpg\"</img>";
+						elseif($_SESSION["fallos"]==5)
+							echo "<img src=\"imgs/5.jpg\"</img>";
+						else
+							echo "<img src=\"imgs/6.jpg\"</img>";
+					?>
+				
 			</article>
 			<p>
 				<form action = "nuevaLetra.php" method="post" class="form-register">
