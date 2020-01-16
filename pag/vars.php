@@ -3,18 +3,16 @@
 
 	$letra = "";
 	$cont = 0;
+	$codificacion = array();
+	$palabra = array();
 
 	echo $_SESSION["rellenar"];
 	if ($_SESSION["rellenar"] == 0){
-		echo ".";
-		$codificacion = array();
-		$palabra = array();
 		$numero = rand(1, 5);
 		$query = "SELECT nombre from palabra where id = '$numero'";
 		$result = mySqli_query($conexion,$query);						
 		$datos = mysqli_fetch_array($result);			
 
-		echo $datos['nombre'];
 		for($i = 0; $i < strlen($datos['nombre']); $i++)
 		{
 			array_push($codificacion, "_" );

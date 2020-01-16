@@ -1,6 +1,6 @@
-<?php
-
-	include "vars.php";
+<?php	
+	session_start();
+	$conexion = mysqli_connect('172.18.0.1','usuario','1234','db');
 ?>
 
 
@@ -56,12 +56,64 @@
 
 			<article>
 				<header>
+					<p>Estas jugando con el usuario: 
+						<?php 
+							if ($_GET['jugando'] != 1)
+								$_SESSION['mail'] = $_GET['email'];
+
+							$email = $_SESSION['mail'];
+							$query = "SELECT nombre, ganadas, perdidas FROM Jugador WHERE email = '$email'";
+							$result = mySqli_query($conexion,$query);
+							$datos = mysqli_fetch_array($result);
+								
+							$_SESSION['nombre'] = $datos['nombre'];
+							$_SESSION['ganadas'] = $datos['ganadas'];
+							$_SESSION['perdidas'] = $datos['perdidas'];
+
+							echo $datos['nombre'];
+							
+						?></p>
+						<p>Partidas ganadas: <?php echo $datos['ganadas']; ?></p>
+						<p>Partidas perdidas: <?php echo $datos['perdidas']; ?></p>
+				</header>
+				
+			</article>
+			<article>
+				<header>
 					<p>Juego del ahorcado</p>
 				</header>
 				<p>
 					<?php
+						$codificacion = array();
+						$palabra = array();
+						$letra = "";
+						$cont = 0;
+						
+						if ($_GET['jugando'] != 1){
+							
+							$_SESSION["acertadas"] = 0;
+							$_SESSION["fallos"]=0;
+							$_SESSION["palabra"] = array();
+							$_SESSION["codificacion"] = array();
+							
 
-						foreach ($_SESSION["codificacion"] as $a) {
+							$numero = rand(1, 5);
+							$query = "SELECT nombre from palabra where id = '$numero'";
+							$result = mySqli_query($conexion,$query);						
+							$datos = mysqli_fetch_array($result);			
+
+							for($i = 0; $i < strlen($datos['nombre']); $i++)
+							{
+								array_push($codificacion, "_" );
+								array_push($palabra, ($datos['nombre'])[$i]);
+							}
+		
+							$_SESSION["palabra"] = $palabra;
+							$_SESSION["codificacion"] = $codificacion;
+						}	
+						$palabra = $_SESSION["palabra"];
+						$codificacion = $_SESSION["codificacion"];
+						foreach ($codificacion as $a) {
 							echo $a . " ";
 						}
 						foreach ($palabra as $a) {
@@ -71,7 +123,7 @@
 					
 				</p>
 			</article>
-			<article>
+			<p>
 				<form action = "nuevaLetra.php" method="post" class="form-register">
 					<table>
 						<tr>
@@ -101,7 +153,7 @@
 						</tr>
 
 
-						<tr>
+						<tr class="fila">
 							<td>  <input value="z" name="z" class="button" type="submit"></td>
 							<td>  <input value="x" name="x" class="button" type="submit"></td>
 							<td>  <input value="c" name="c" class="button" type="submit"></td>
@@ -112,7 +164,7 @@
 						</tr>
 					</table>
 				</form>
-			</article>
+			</p>
 		</section>
 
 		

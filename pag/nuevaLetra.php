@@ -1,7 +1,6 @@
 <?php
 		include "vars.php";
 		$conexion = mysqli_connect('172.18.0.1','usuario','1234','db');
-		
 
 		if ($_POST['q'] == true) {$letra="q";
 		}elseif($_POST['w'] == true){$letra="w";

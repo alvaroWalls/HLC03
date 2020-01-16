@@ -1,15 +1,10 @@
 <?php
-	$conexion = mysqli_connect('172.19.0.1','usuario','1234','db');
+	$conexion = mysqli_connect('172.18.0.1','usuario','1234','db');
 	
 	if($_GET['error']==3)
 	{
 		echo "<script>alert('Jugador registrado con exito')</script>";	
 	}
-	session_start();
-	$_SESSION["rellenar"]=0;
-	$_SESSION["fallos"]=0;
-	$_SESSION["palabra"] = array();
-	$_SESSION["codificacion"] = array();
 ?>
 
 
@@ -84,7 +79,7 @@
 							$mail = $datos['email'];
 					?>
 					<tr>
-						<td><?php echo "<a id='enlace_jugar' href=juego.php?nombre=".$mail ."</a>" .$datos['nombre']?></td>
+						<td><?php echo "<a id='enlace_jugar' href=\"juego.php?email=$mail\"</a>" .$datos['nombre']?></td>
 						<td><?php echo $datos['apellido'] ?></td>
 						<td><?php echo $edad ?></td>
 					</tr>
