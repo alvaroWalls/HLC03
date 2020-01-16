@@ -5,6 +5,11 @@
 	{
 		echo "<script>alert('Jugador registrado con exito')</script>";	
 	}
+	session_start();
+	$_SESSION["rellenar"]=0;
+	$_SESSION["fallos"]=0;
+	$_SESSION["palabra"] = array();
+	$_SESSION["codificacion"] = array();
 ?>
 
 

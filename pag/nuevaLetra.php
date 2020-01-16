@@ -1,5 +1,5 @@
 <?php
-		include_once ("vars.php");
+		include "vars.php";
 		$conexion = mysqli_connect('172.18.0.1','usuario','1234','db');
 		
 
@@ -32,7 +32,8 @@
 		}elseif($_POST['m'] == true){$letra="m";
 		}
 	
-		header('location: vars.php?letra=' . $letra);
+
+		header('location: comprobarLetra.php?letra=' . $letra);
 						
 
 	?>

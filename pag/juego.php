@@ -1,7 +1,6 @@
 <?php
-	include_once ("vars.php");
-	
-	$fallos = 0;
+
+	include "vars.php";
 ?>
 
 
@@ -61,10 +60,12 @@
 				</header>
 				<p>
 					<?php
-						
 
-						foreach ($codificacion as $a) {
+						foreach ($_SESSION["codificacion"] as $a) {
 							echo $a . " ";
+						}
+						foreach ($palabra as $a) {
+							echo $a . "";
 						}
 						?>
 					
